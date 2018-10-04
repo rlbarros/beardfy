@@ -1,4 +1,4 @@
-import { Controller } from '../controller';
+import { Controller } from '../Controller';
 import { HttpServer } from '../../server/HttpServer';
 import { Request, Response } from 'restify';
 import { licencaService } from '../../services/login/licencaService';
@@ -30,7 +30,6 @@ export class LicencaController implements Controller {
   }
 
   private async remove(req: Request, res: Response): Promise<void> {
-    const licenca = await licencaService.getById(req.params.id);
-    res.send(await licencaService.delete(licenca.id));
+    res.send(await licencaService.delete(req.params.id));
   }
 }
