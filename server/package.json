@@ -1,0 +1,27 @@
+{
+  "name": "nodets",
+  "version": "1.0.0",
+  "description": "learning",
+  "main": "index.js",
+  "scripts": {
+    "docker-build": "docker build -t confmr.azurecr.io/javascript-conference-2017-typescript-live:latest .",
+    "docker-push": "docker push -t confmr.azurecr.io/javascript-conference-2017-typescript-live",
+    "build": "rimraf build && tsc",
+    "start-server": "node build/index.js",
+    "start": "nodemon --exec ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/es6-promise": "^3.3.0",
+    "@types/restify": "^7.2.5",
+    "nodemon": "^1.18.4",
+    "pg": "^7.4.3",
+    "restify": "^7.2.1",
+    "rimraf": "^2.6.2",
+    "ts-node": "^7.0.1",
+    "typeorm": "^0.2.7",
+    "typescript": "^3.1.1"
+  }
+}
