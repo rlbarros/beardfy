@@ -1,6 +1,6 @@
 GET http://localhost:8080/login/licencas
 
-GET http://localhost:8080/login/licenca/2
+GET http://localhost:8080/login/licenca/3
 
 
 POST http://localhost:8080/login/licenca
