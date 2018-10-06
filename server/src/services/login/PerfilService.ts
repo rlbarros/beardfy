@@ -8,11 +8,11 @@ export class PerfilService extends Service<Perfil> {
   }
 
   public async getById(id: number): Promise<Perfil> {
-    return (await this.getRepository()).findOne(id);
+    return (await this.getRepository()).findOne(id, { relations: ["aplicacao"] });
   }
 
   public async list(): Promise<Perfil[]> {
-    return (await this.getRepository()).find();
+    return (await this.getRepository()).find({ relations: ["aplicacao"] });
   }
 
   public async create(perfil: Perfil): Promise<Perfil> {

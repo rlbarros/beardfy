@@ -1,14 +1,14 @@
 GET http://localhost:8080/login/perfis
 
-GET http://localhost:8080/login/perfil/3
+GET http://localhost:8080/login/perfil/1
 
 
 POST http://localhost:8080/login/perfil
 content-type: application/json
 
 {
-  "titulo": "Administrador 4",
-  "descricao": "Administra o Sistema 4",
+  "titulo": "Administrador",
+  "descricao": "Administra o Sistema",
   "aplicacao": {
     "idAplicacao": 1
   }

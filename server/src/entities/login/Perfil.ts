@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, OneToMany, ManyToOne } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
 import { Aplicacao } from './Aplicacao';
 
 @Entity({
@@ -10,6 +10,7 @@ export class Perfil {
   public idPerfil: number;
 
   @ManyToOne(type => Aplicacao, aplicacao => aplicacao.perfis)
+  @JoinColumn({name: "idAplicacao"})
   public aplicacao: Aplicacao;
 
   @Column()

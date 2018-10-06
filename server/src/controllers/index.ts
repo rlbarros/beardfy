@@ -5,10 +5,12 @@ import { PingController } from "./PingController";
 import { LicencaController } from "./login/LicencaController";
 import { AplicacaoController } from "./login/AplicacaoController";
 import { PerfilController } from "./login/PerfilController";
+import { PermissaoController } from "./login/PermissaoController";
 
 export const Controllers = [
   new PingController(),
   new LicencaController(),
   new AplicacaoController(),
-  new PerfilController()
+  new PerfilController(),
+  new PermissaoController()
 ];
