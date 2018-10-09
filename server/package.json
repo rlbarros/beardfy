@@ -9,7 +9,10 @@
     "build": "rimraf build && tsc",
     "start-server": "node build/index.js",
     "start": "nodemon --exec ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migration-run": "ts-node .\\node_modules\\typeorm\\cli.js migration:run",
+    "migration-revert": "ts-node .\\node_modules\\typeorm\\cli.js migration:revert",
+    "migration-create": "./node_modules/.bin/typeorm migration:create -n <<Nome do Migration>>"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +20,8 @@
     "@types/es6-promise": "^3.3.0",
     "@types/restify": "^7.2.5",
     "nodemon": "^1.18.4",
-    "pg": "^7.4.3",
+    "npx": "^10.2.0",
+    "pg": "^7.5.0",
     "restify": "^7.2.1",
     "rimraf": "^2.6.2",
     "ts-node": "^7.0.1",

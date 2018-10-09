@@ -1,36 +1,35 @@
 import { Licenca } from '../../entities/login/Licenca';
-import { DatabaseProvider } from '../../database';
+import { Service } from '../Service';
+import { Repository } from 'typeorm';
 
-export class LicencaService {
-  public async getById(id: number): Promise<Licenca> {
-    const connection = await DatabaseProvider.getConnection();
-    return await connection.getRepository(Licenca).findOne(id);
+export class LicencaService extends Service<Licenca> {
+  public async getRepository(): Promise<Repository<Licenca>> {
+    return (await super.getConnection()).getRepository(Licenca);
   }
 
-  public async create(licenca: Licenca): Promise<Licenca> {
-    const connection = await DatabaseProvider.getConnection();
-    return await connection.getRepository(Licenca).save(licenca);
+  public async getById(id: number): Promise<Licenca> {
+    return (await this.getRepository()).findOne(id);
   }
 
   public async list(): Promise<Licenca[]> {
-    const connection = await DatabaseProvider.getConnection();
-    return await connection.getRepository(Licenca).find();
+    return (await this.getRepository()).find();
+  }
+
+  public async create(licenca: Licenca): Promise<Licenca> {
+    return (await this.getRepository()).save(licenca);
   }
 
   public async update(licenca: Licenca): Promise<Licenca> {
-    const connection = await DatabaseProvider.getConnection();
-    const repo = connection.getRepository(Licenca);
-    const entity = await repo.findOne(licenca.id);
+    const entity =  await this.getById(licenca.id);
     entity.cnpjCpf = licenca.cnpjCpf;
     entity.dataCadastro = licenca.dataCadastro;
     entity.validoAte = licenca.validoAte;
-    return await repo.save(entity);
+    return (await this.getRepository()).save(entity);
   }
 
   public async delete(id: number): Promise<Licenca> {
-    const connection = await DatabaseProvider.getConnection();
-    const entity = await connection.getRepository(Licenca).findOne(id);
-    return await connection.getRepository(Licenca).remove(entity);
+    const entity = await this.getById(id);
+    return (await this.getRepository()).remove(entity);
   }
 }
 

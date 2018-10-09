@@ -5,7 +5,7 @@
   "port": "5432",
   "username": "mvbwjbbeljtypb",
   "database": "d3b6bocrf6qmpu",
-  "synchronize": true,
+  "synchronize": false,
   "password": "7f8a5104ed606ff71748cf4c1467d0c518208fa7b220b00b1df452a94302711c",
   "logging": false,
   "entities": ["src/entities/**/*.ts"],

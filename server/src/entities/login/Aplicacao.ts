@@ -3,8 +3,8 @@ import { Perfil } from './Perfil';
 
 @Entity({
   name: 'aplicacoes',
-  schema: 'login' 
- })
+  schema: 'login'
+})
 export class Aplicacao {
   @PrimaryGeneratedColumn()
   public idAplicacao: number;

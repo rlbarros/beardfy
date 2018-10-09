@@ -2,11 +2,11 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({
    name: 'licencas',
-   schema: 'login' 
+   schema: 'login'
   })
 export class Licenca {
   @PrimaryGeneratedColumn()
-  public id: number;
+  public idLicenca: number;
 
   @Column()
   public cnpjCpf: string;
