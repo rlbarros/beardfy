@@ -15,11 +15,12 @@ content-type: application/json
   "tipo": ["P", "Z"]
 }
 
-PUT http://localhost:8080/login/perfilPermissao/2
+PUT http://localhost:8080/login/perfilPermissao
 content-type: application/json
 
 {
-  "cnpjCpf": "07426400433",
-  "dataCadastro": "2018-08-01 00:00:00",
-  "validoAte": "2028-08-01 00:00:00"
+  "idPerfil": 1,
+  "idPermissao": 1,
+  "tipo": ["P", "E", "Z"]
 }
+
