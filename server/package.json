@@ -9,10 +9,12 @@
     "build": "rimraf build && tsc",
     "start-server": "node build/index.js",
     "start": "nodemon --exec ts-node src/index.ts",
+    "debug": "nodemon --watch src/**/* -e ts,json --exec node --inspect-brk -r ts-node/register src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migration-run": "ts-node .\\node_modules\\typeorm\\cli.js migration:run",
     "migration-revert": "ts-node .\\node_modules\\typeorm\\cli.js migration:revert",
-    "migration-create": "./node_modules/.bin/typeorm migration:create -n <<Nome do Migration>>"
+    "migration-create": "./node_modules/.bin/typeorm migration:create -n <<Nome do Migration>>",
+    "migration-create2": " .\\node_modules\\.bin\\typeorm migration:create -n  <<Nome do Migration>>"
   },
   "author": "",
   "license": "ISC",

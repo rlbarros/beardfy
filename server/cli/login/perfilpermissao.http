@@ -1,20 +1,21 @@
 GET http://localhost:8080/login/perfisPermissoes
 
-GET http://localhost:8080/login/perfil/1
+GET http://localhost:8080/login/perfilPermissao/1
 
 
-POST http://localhost:8080/login/perfil
+GET http://localhost:8080/login/perfilPermissao/1/1
+
+
+POST http://localhost:8080/login/perfilPermissao
 content-type: application/json
 
 {
-  "titulo": "Administrador",
-  "descricao": "Administra o Sistema",
-  "aplicacao": {
-    "idAplicacao": 1
-  }
+  "idPerfil": 1,
+  "idPermissao": 1,
+  "tipo": ["P", "Z"]
 }
 
-PUT http://localhost:8080/login/perfil/2
+PUT http://localhost:8080/login/perfilPermissao/2
 content-type: application/json
 
 {

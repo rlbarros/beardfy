@@ -1,9 +1,9 @@
-import { Entity, JoinColumn, OneToOne, PrimaryColumn } from 'typeorm';
+import { Entity, PrimaryColumn, Column } from 'typeorm';
 import { Perfil } from './Perfil';
 import { Permissao } from './Permissao';
 
 @Entity({
-  name: 'permissoes',
+  name: 'perfilpermissao',
   schema: 'login'
  })
 export class PerfilPermissao {
@@ -18,4 +18,7 @@ export class PerfilPermissao {
 
   @PrimaryColumn()
   public idPermissao: number;
+
+  @Column({ nullable: false, type: "simple-array"})
+  public tipo: string[];
 }

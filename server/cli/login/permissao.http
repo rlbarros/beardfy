@@ -38,3 +38,6 @@ content-type: application/json
   "dataCadastro": "2018-08-01 00:00:00",
   "validoAte": "2028-08-01 00:00:00"
 }
+
+
+DELETE  http://localhost:8080/login/permissao/2

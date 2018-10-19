@@ -1,6 +1,7 @@
 import { PerfilPermissao } from '../../entities/login/PerfilPermissao';
 import { Service } from '../Service';
 import { Repository } from 'typeorm';
+import { TORMArrayHelper } from '../../helper/TORMArrayHelper';
 
 export class PerfilPermissaoService extends Service<PerfilPermissao> {
   public async getRepository(): Promise<Repository<PerfilPermissao>> {
@@ -19,7 +20,7 @@ export class PerfilPermissaoService extends Service<PerfilPermissao> {
   }
 
   public async list(): Promise<PerfilPermissao[]> {
-    return (await this.getRepository()).find({ relations: ['aplicacao'] });
+    return (await this.getRepository()).find();
   }
 
   public async listPermissoesDoPerfil(idPerfil: number): Promise<PerfilPermissao[]> {
@@ -30,13 +31,14 @@ export class PerfilPermissaoService extends Service<PerfilPermissao> {
     });
   }
 
-
   public async create(perfilPermissao: PerfilPermissao): Promise<PerfilPermissao> {
+    perfilPermissao.tipo = TORMArrayHelper.AdapterStringArray(perfilPermissao.tipo);
     return (await this.getRepository()).save(perfilPermissao);
   }
 
   public async update(perfilPermissao: PerfilPermissao): Promise<PerfilPermissao> {
-    throw new Error('Atualizar não é valido para esta entidade.');
+    perfilPermissao.tipo = TORMArrayHelper.AdapterStringArray(perfilPermissao.tipo);
+    return (await this.getRepository()).save(perfilPermissao);
   }
 
   public async delete(perfilPermissao: PerfilPermissao): Promise<PerfilPermissao> {

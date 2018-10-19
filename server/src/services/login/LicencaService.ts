@@ -20,7 +20,7 @@ export class LicencaService extends Service<Licenca> {
   }
 
   public async update(licenca: Licenca): Promise<Licenca> {
-    const entity =  await this.getById(licenca.id);
+    const entity =  await this.getById(licenca.idLicenca);
     entity.cnpjCpf = licenca.cnpjCpf;
     entity.dataCadastro = licenca.dataCadastro;
     entity.validoAte = licenca.validoAte;
