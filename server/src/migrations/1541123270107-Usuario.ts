@@ -31,7 +31,7 @@ export class Usuario1541123270107 implements MigrationInterface {
             length: '512'
           },
           {
-            name: 'nomeacesso',
+            name: 'nomeAcesso',
             type: 'varchar',
             length: '30',
             isNullable: false
@@ -43,12 +43,12 @@ export class Usuario1541123270107 implements MigrationInterface {
             isNullable: false
           },
           {
-            name: 'dataexpirasenha',
+            name: 'dataExpiraSenha',
             type: 'date',
             isNullable: false
           },
           {
-            name: 'datacadastro',
+            name: 'dataCadastro',
             type: 'date',
             isNullable: false
           },
@@ -58,15 +58,15 @@ export class Usuario1541123270107 implements MigrationInterface {
             isNullable: false
           },
           {
-            name: 'forca_senha',
+            name: 'forcaSenha',
             type: 'int'
           },
           {
-            name: 'tipousuario',
+            name: 'tipoUsuario',
             type: 'varchar'
           },
           {
-            name: 'datanascimento',
+            name: 'dataNascimento',
             type: 'date',
             isNullable: false
           }

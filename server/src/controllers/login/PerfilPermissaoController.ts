@@ -39,6 +39,9 @@ export class PerfilPermissaoController implements Controller{
   }
 
   private async remove(req: Request, res: Response): Promise<void> {
-    res.send(await perfilPermissaoService.delete(req.params.id));
+    const paramPerfilPermissao: PerfilPermissao = new PerfilPermissao();
+    paramPerfilPermissao.init(req.params.idPerfil, req.params.idPermissao);
+
+    res.send(await perfilPermissaoService.delete(paramPerfilPermissao));
   }
 }

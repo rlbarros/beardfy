@@ -1,18 +1,18 @@
 import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 @Entity({
-  name: 'perfilpermissao',
+  name: 'usuariopermissao',
   schema: 'login'
  })
-export class PerfilPermissao {
+export class UsuarioPermissao {
 
-  public init(idPerfil:number, idPermissao: number) :void {
-    this.idPerfil = idPerfil;
+  public init(idUsuario:number, idPermissao: number) :void {
+    this.idUsuario = idUsuario;
     this.idPermissao = idPermissao;
   }
 
   @PrimaryColumn()
-  public idPerfil: number;
+  public idUsuario: number;
 
   @PrimaryColumn()
   public idPermissao: number;
